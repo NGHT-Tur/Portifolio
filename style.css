@@ -1,0 +1,404 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Transição suave para cores */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* VARIÁVEIS (REDEFINIDAS PARA CLARO/ESCURO) */
+:root {
+    /* Cores do MODO CLARO (Padrão) */
+    --fundo-principal: #BCE6FF; /* Azul claro */
+    --fundo-menu: #2C82B5;      /* Azul escuro menu */
+    --fundo-sobre: #A8DFFF;     /* Azul um pouco mais escuro que o fundo */
+    --fundo-skill-item: #E5F4FF; /* Branco azulado */
+
+    --cor-letra-principal: #015C91; /* Azul da letra principal */
+    --cor-titulo-section: #275E92; /* Azul dos títulos */
+    --cor-intro-in1: #78AAC8;      /* Azul claro do "Olá eu sou" */
+    --cor-link-menu: #f0f8ff;      /* Branco azulado dos links */
+
+    --fundo-botao: #015C91;      /* Azul dos botões */
+    --sombra-botao: #BCE6FF;     /* Cor da sombra/borda do botão */
+    --cor-rodape: #88CDF6;       /* Azul do texto do rodapé */
+    --borda-skill: #2C82B5;      /* Borda da Skill */
+
+    /* Variáveis do Formulário (CONTATO) */
+    --fundo-cont: #A8DFFF; /* Fundo do Form */
+    --cor-cont-label: #015C91; /* Cor da Label */
+    --fundo-cont-input: #E5F4FF; /* Fundo do Input */
+    --borda-cont-input: #7f7fbf; /* Borda do Input */
+    --fundo-cont-button: #232f9a; /* Fundo do Botão */
+}
+
+/* MODO ESCURO */
+body.dark-mode {
+    --fundo-principal: #121212; /* Fundo escuro */
+    --fundo-menu: #1F1F1F;      /* Menu mais escuro */
+    --fundo-sobre: #2A2A2A;     /* Fundo da seção sobre */
+    --fundo-skill-item: #333333; /* Skill item escuro */
+
+    --cor-letra-principal: #E0E0E0; /* Letra clara */
+    --cor-titulo-section: #88CDF6; /* Títulos em azul claro */
+    --cor-intro-in1: #A8DFFF;      /* Azul claro/branco */
+    --cor-link-menu: #BCE6FF;      /* Azul claro */
+
+    --fundo-botao: #88CDF6;      /* Azul claro dos botões */
+    --sombra-botao: #121212;     /* Sombra escura/borda */
+    --cor-rodape: #444444;       /* Cinza escuro */
+    --borda-skill: #88CDF6;      /* Borda da Skill */
+
+    /* Variáveis do Formulário (CONTATO) */
+    --fundo-cont: #1F1F1F;
+    --cor-cont-label: #E0E0E0;
+    --fundo-cont-input: #333333;
+    --borda-cont-input: #555555;
+    --fundo-cont-button: #88CDF6;
+}
+
+/* BASE: Usando as novas variáveis */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--cor-letra-principal);
+}
+
+/* CABEÇALHO */
+.linha {
+    background-color: var(--fundo-menu);
+    color: var(--cor-link-menu); /* Ajustado para usar variável */
+}
+
+.linha-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ... (brand, logo, lg - mantidos) ... */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    height: 55px;
+}
+
+.lg {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+/* Botão de Toggle */
+.theme-toggle {
+    /* Garante que o botão de toggle use o estilo 'btn' */
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1; /* Alinha o ícone */
+}
+
+.btn {
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    color: var(--cor-link-menu);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: var(--fundo-botao);
+    box-shadow: -3px 3px 1px var(--sombra-botao);
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    border: none; /* Adicionado para o botão de toggle */
+}
+
+.btn:hover {
+    transform: translate(-1px, 1px);
+    box-shadow: -1px 1px 1px var(--sombra-botao);
+    /* Cor de hover mais escura no light, mais clara no dark */
+    background: var(--fundo-botao); /* Mantido, mas você pode usar 'filter: brightness(0.85);' se quiser escurecer */
+}
+
+/* Títulos de Sessão: Usando a nova variável */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--cor-titulo-section);
+    font-weight: 700;
+}
+
+.section-title.light {
+    color: var(--fundo-principal); /* No light mode é BCE6FF, no dark mode é 121212 */
+}
+
+/* SEÇÃO INTRODUÇÃO: Usando as novas variáveis */
+.intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1 1 250px;
+}
+
+.in1 {
+    color: var(--cor-intro-in1);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.in2 {
+    color: var(--cor-titulo-section);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.intro-img {
+    flex: 0 1 250px;
+    max-width: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--fundo-menu);
+    align-self: center;
+}
+
+/* SOBRE MIM: Usando as novas variáveis */
+.sobre {
+    background-color: var(--fundo-menu);
+    padding: 3.5rem 1.5rem;
+}
+
+.sobre-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--fundo-sobre);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sobre-text {
+    flex: 1 1 260px;
+    color: var(--cor-titulo-section);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.profile-pic {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url("WhatsApp\ Image\ 2025-11-10\ at\ 13.45.27.jpeg");
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--cor-link-menu); /* Borda da foto do perfil */
+}
+
+/* HABILIDADES: Usando as novas variáveis */
+.skills {
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+}
+
+.skills-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    border: 2px solid var(--borda-skill);
+    border-radius: 10px;
+    padding: 1rem;
+    background: var(--fundo-skill-item);
+}
+
+.skill-item p {
+    color: var(--fundo-menu); /* Cor forte, fica bom em ambos os modos */
+    font-weight: 600;
+}
+
+/* PROJETOS: Usando as novas variáveis */
+.projetos {
+    background-color: var(--fundo-menu);
+    padding: 3.5rem 1.5rem 3rem;
+}
+
+.projetos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.projeto-item {
+    display: block;
+    background: var(--fundo-sobre); /* Usando fundo-sobre */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--cor-rodape);
+}
+
+.projeto-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* CONTATO/FORMULÁRIO: Usando as novas variáveis */
+.contato {
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+}
+
+.cont {
+    background: var(--fundo-cont);
+    border-radius: 15px;
+    padding: clamp(24px, 6vw, 48px);
+    margin: 0 auto 60px;
+    width: min(90%, 600px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+    .cont form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .cont label {
+        font-weight: 600;
+        color: var(--cor-cont-label);
+    }
+    .cont input, .cont textarea {
+        width: 100%;
+        color: var(--cor-cont-label);
+        background-color: var(--fundo-cont-input);
+        border-radius: 8px;
+        padding: 10px;
+        border: 1.5px solid var(--borda-cont-input);
+        font-size: 1rem;
+    }
+    .cont textarea { height: 100px; }
+    .cont button {
+        background: var(--fundo-cont-button);
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 25px;
+        font-weight: 700;
+        cursor: pointer;
+        align-self: center;
+        transition: 0.3s ease;
+    }
+    .cont button:hover {
+        /* No modo escuro, a cor do botão é #88CDF6, então o hover deve ser um pouco mais escuro */
+        background: #1c2dc9; /* Cor de hover original (claro) */
+    }
+
+/* Hover específico para modo escuro */
+.dark-mode .cont button:hover {
+    background: #5fa8cf; /* Cor de hover mais escura para o botão claro do modo escuro */
+}
+
+/* RODAPÉ: Usando as novas variáveis */
+.footer {
+    background-color: var(--fundo-menu);
+    color: var(--cor-rodape);
+    text-align: center;
+    padding: 1rem;
+}
+
+.rodape {
+    font-size: 1rem;
+}
+
+/* RESPONSIVIDADE (Mantido como estava) */
+/* ... */
+@media (max-width: 768px) {
+    .linha-inner {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .intro {
+        padding-top: 2.5rem;
+        text-align: center;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+
+    .in1 {
+        font-size: 1.4rem;
+    }
+
+    .in2 {
+        font-size: 2rem;
+    }
+
+    .intro-img {
+        margin: 0 auto;
+    }
+
+    .sobre-box {
+        text-align: center;
+    }
+
+    .sobre-text {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .lg {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .in2 {
+        font-size: 1.8rem;
+    }
+}

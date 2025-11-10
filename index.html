@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Arthur Vinícius</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="inicio.js" defer></script>
+</head>
+<body>
+    <header class="linha">
+        <div class="linha-inner">
+            <div class="brand">
+                <img src="A-removebg-preview 1.png" class="logo" alt="Logo Arthur Vinícius">
+                <p class="lg">Arthur Vinícius</p>
+            </div>
+
+            <nav class="nav-links">
+                <button id="theme-toggle" class="btn theme-toggle">
+                    <span class="icon">🌙</span>
+                </button>
+                <a href="#inicio" class="btn">Início</a>
+                <a href="#sobre" class="btn">Sobre Mim</a>
+                <a href="#skills" class="btn">Habilidades</a>
+                <a href="#projetos" class="btn">Projetos</a>
+                <a href="#contato" class="btn">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro" id="inicio">
+            <div class="intro-text">
+                <p class="in1">Olá, eu sou</p>
+                <p class="in2">Arthur Vinícius Gomes</p>
+            </div>
+            <img src="WhatsApp Image 2025-11-10 at 13.45.27.jpeg" alt="Foto de Arthur Vinícius" class="intro-img">
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2 class="section-title">SOBRE MIM</h2>
+
+            <div class="sobre-box">
+                <div class="sobre-text">
+                    Olá, sou Arthur, estudante de TI apaixonado por tecnologia e desenvolvimento! <br><br>
+                    Atualmente, estou cursando o Ensino Médio e, durante minha jornada acadêmica, me apaixonei por tudo
+                    o que envolve a área de Tecnologia da Informação. Ao longo dos meus estudos, desenvolvi habilidades
+                    em diversas linguagens de programação e ferramentas, incluindo HTML, CSS, C#, JavaScript e MySQL.
+                </div>
+                <div class="profile-pic"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2 class="section-title">HABILIDADES</h2>
+
+            <div class="skills-grid">
+                <div class="skill-item"><p>HTML</p></div>
+                <div class="skill-item"><p>CSS</p></div>
+                <div class="skill-item"><p>JavaScript</p></div>
+                <div class="skill-item"><p>C#</p></div>
+                <div class="skill-item"><p>MySQL</p></div>
+                <div class="skill-item"><p>Figma</p></div>
+                <div class="skill-item"><p>Linux</p></div>
+                <div class="skill-item"><p>Canva</p></div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <h2 class="section-title light">PROJETOS</h2>
+
+            <div class="projetos-grid">
+                <a href="#" class="projeto-item">
+                    <img src="image 1.png" alt="Projeto 1">
+                </a>
+                <a href="#" class="projeto-item">
+                    <img src="image 2.png" alt="Projeto 2">
+                </a>
+                <a href="#" class="projeto-item">
+                    <img src="image 4.png" alt="Projeto 3">
+                </a>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <h2 class="section-title">FORMULÁRIO</h2>
+            <div style="height: 100px;"></div> <div class="cont">
+            <form id="contact-form" autocomplete="off">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" placeholder="Envie-me uma mensagem" required></textarea>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="rodape">Arthur Vinícius © 2025</p>
+    </footer>
+</body>
+</html>
